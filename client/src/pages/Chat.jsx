@@ -150,7 +150,7 @@ const Chat = ({chatId,user}) => {
         padding={"1rem"}
         spacing={"1rem"}
         bgcolor={"#f2f2f2"}
-        height={"80%"}
+        height={"73vh"}
         sx=
         {{
           overflowX: "hidden",
@@ -180,8 +180,8 @@ const Chat = ({chatId,user}) => {
               <AttachFileIcon/>
             </IconButton>
             <input style={{
-               width:"100%",
-               height:"100%",
+               width:"100vh",
+               height:"10vh",
                border:"1px solid lightblue",
                outline:"none",
                padding:"0 3rem" ,
