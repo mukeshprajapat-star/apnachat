@@ -32,7 +32,7 @@ import toast from 'react-hot-toast';
 import { userExists } from '../redux/reducers/auth';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { server } from '../components/constants/config';
+
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
