@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios'
-import { server } from "../../components/constants/config";
+// import { server } from "../../components/constants/config";
 
 const adminLogin=createAsyncThunk("admin/login",async(secretKey)=>{
     try {
@@ -11,7 +11,7 @@ const adminLogin=createAsyncThunk("admin/login",async(secretKey)=>{
             }
         }
     
-        const {data}=await axios.post(`${server}/api/v1/admin/verify`,{secretKey},config
+        const {data}=await axios.post(`/api/v1/admin/verify`,{secretKey},config
         )
         return data.message
     } catch (error) {
@@ -21,7 +21,7 @@ const adminLogin=createAsyncThunk("admin/login",async(secretKey)=>{
 })
 const getAdmin=createAsyncThunk("admin/getAdmin",async()=>{
     try {
-        const {data}=await axios.get(`${server}/api/v1/admin/`,{withCredentials:true,}
+        const {data}=await axios.get(`/api/v1/admin/`,{withCredentials:true,}
         )
         return data.admin
     } catch (error) {
@@ -31,7 +31,7 @@ const getAdmin=createAsyncThunk("admin/getAdmin",async()=>{
 })
 const adminLogout=createAsyncThunk("admin/adminLogout",async()=>{
     try {
-        const {data}=await axios.get(`${server}/api/v1/admin/logout`,{withCredentials:true,}
+        const {data}=await axios.get(`/api/v1/admin/logout`,{withCredentials:true,}
         )
         return data.message
     } catch (error) {
