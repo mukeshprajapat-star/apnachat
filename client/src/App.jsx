@@ -19,7 +19,6 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import {Loaders} from "./components/layout/Loaders";
 import Dashboard from "./pages/admin/Dashboard";
 import axios from "axios";
-import { server } from "./components/constants/config";
 import { useDispatch, useSelector } from "react-redux";
 import { userExists, userNotExists } from "./redux/reducers/auth";
 import { Toaster } from "react-hot-toast";
