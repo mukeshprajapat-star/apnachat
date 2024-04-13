@@ -1,5 +1,4 @@
 import React ,{useState} from "react";
-import { sampleUsers } from "../constants/sampleData";
 import UserItem from "../shared/UserItem";
 import { Typography, Dialog, DialogTitle, Stack, Button, Skeleton } from "@mui/material";
 import { useAsyncMutation, useError } from "../../hooks/hooks";

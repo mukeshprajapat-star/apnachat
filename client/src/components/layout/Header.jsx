@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { lazy } from 'react';
 import { Suspense } from 'react';
 import axios from 'axios';
-import { server } from '../constants/config';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { userNotExists } from '../../redux/reducers/auth';
@@ -42,7 +41,7 @@ const Header = () => {
     }
     const LogoutHandler=async ()=>{
       try {
-       const {data}= axios.get(`${server}/api/v1/user/logout`,{withCredentials:true})
+       const {data}= axios.get(`/api/v1/user/logout`,{withCredentials:true})
         dispatch(userNotExists())
         toast.success(data.message);
         
