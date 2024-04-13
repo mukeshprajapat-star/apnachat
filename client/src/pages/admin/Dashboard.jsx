@@ -9,7 +9,6 @@ import {
 import { Box, Container, Paper, Skeleton, Stack, Typography } from "@mui/material";
 import moment from "moment";
 import React from "react";
-import { server } from "../../components/constants/config";
 import AdminLayout from "../../components/layout/AdminLayout";
 import { Loaders } from "../../components/layout/Loaders";
 import { DoughnutCharts, LineCharts } from "../../components/specific/Charts";
@@ -20,7 +19,7 @@ import {
 import { useError } from "../../hooks/hooks";
 
 const Dashboard = () => {
-  const {loading,data,error}=useFetchData(`${server}/api/v1/admin/stats`,"dashboard-stats");
+  const {loading,data,error}=useFetchData(`/api/v1/admin/stats`,"dashboard-stats");
   const {stats}=data || {}
   useError([{isError:error,error:error}])
   const Appbar = (

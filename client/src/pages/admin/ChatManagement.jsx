@@ -1,7 +1,6 @@
 import { useFetchData } from "6pp";
 import { Avatar, Skeleton, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { server } from "../../components/constants/config";
 import AdminLayout from "../../components/layout/AdminLayout";
 import AvatarCard from "../../components/shared/AvatarCard";
 import Table from "../../components/specific/Table";
@@ -70,7 +69,7 @@ const columns = [
 ];
 const ChatManagement = () => {
 
-  const {loading,data,error}=useFetchData(`${server}/api/v1/admin/chats`,"dashboard-chats");
+  const {loading,data,error}=useFetchData(`/api/v1/admin/chats`,"dashboard-chats");
   const {stats}=data || {}
 
   useError([{isError:error,error:error}])

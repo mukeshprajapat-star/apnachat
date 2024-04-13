@@ -2,8 +2,6 @@ import { useFetchData } from '6pp';
 import { Avatar, Box, Skeleton, Stack } from '@mui/material';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import { server } from '../../components/constants/config';
-import { dashboardData } from '../../components/constants/sampleData';
 import AdminLayout from '../../components/layout/AdminLayout';
 import RenderAttachment from '../../components/shared/RenderAttachment';
 import Table from '../../components/specific/Table';
@@ -78,7 +76,7 @@ return attachments?.length>0 ? attachments.map((i)=>attachments.map((i)=>{
 
 const MessageManagement = () => {
     
-  const {loading,data,error}=useFetchData(`${server}/api/v1/admin/messages`,"dashboard-messages");
+  const {loading,data,error}=useFetchData(`/api/v1/admin/messages`,"dashboard-messages");
   const {stats}=data || {}
 
   useError([{isError:error,error:error}])

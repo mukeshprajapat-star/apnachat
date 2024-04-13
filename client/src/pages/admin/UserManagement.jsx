@@ -1,7 +1,6 @@
 import { useFetchData } from '6pp';
 import { Avatar, Skeleton } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { server } from '../../components/constants/config';
 import AdminLayout from '../../components/layout/AdminLayout';
 import Table from '../../components/specific/Table';
 import { useError } from '../../hooks/hooks';
@@ -54,7 +53,7 @@ const columns=[
 }
 ]
 const UserManagement = () => {
-    const {loading,data,error}=useFetchData(`${server}/api/v1/admin/users`,"dashboard-users");
+    const {loading,data,error}=useFetchData(`/api/v1/admin/users`,"dashboard-users");
     const {stats}=data || {}
     useError([{isError:error,error:error}])
     const [rows ,setRows]=useState([]);
