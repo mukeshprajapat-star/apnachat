@@ -30,7 +30,7 @@ const App = () => {
   const {user,loader} =useSelector((state)=>state.auth)
   const dispatch=useDispatch()
   useEffect(() => {
-    axios.get(`${server}/api/v1/user/me`,{withCredentials:true})
+    axios.get(`/api/v1/user/me`,{withCredentials:true})
     .then(({data})=>dispatch(userExists(data.user)))
     .catch((err)=>dispatch(userNotExists()))
   }, [dispatch])
